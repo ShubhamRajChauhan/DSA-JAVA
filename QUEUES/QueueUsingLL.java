@@ -19,7 +19,7 @@ public class QueueUsingLL {
             return head == null && tail == null;
         }
 
-        //add
+        //add 0(1)
         public static void add(int data) {
             Node newNode = new Node(data);
             if(head == null) {
@@ -30,7 +30,7 @@ public class QueueUsingLL {
             tail = newNode;
         }
 
-        //remove
+        //remove 0(1)
         public static int remove() {
             if(isEmpty()) {
                 System.out.println("empty queue");
@@ -46,7 +46,7 @@ public class QueueUsingLL {
             }
             return front;
         }
-        //peek
+        //peek 0(1)
         public static int peek() {
             if(isEmpty()) {
                 System.out.println("empty queue");
