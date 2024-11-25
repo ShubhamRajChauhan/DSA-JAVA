@@ -36,7 +36,7 @@ public class Activity {
 
         //-------------THE end[] ARRAY IS NOT-SORTED-----------------------------
         int start[] = {1, 3, 0, 5, 8, 5};
-        int end[] = {2, 4, 6, 7, 9 ,9}; //here it is sorted but most of the questions its not soeted, so we write the code for this 
+        int end[] = {2, 4, 6, 7, 9 ,9}; //here it is sorted but most of the questions it's not sorted, so we write the code for this 
 
         //if not sorted --> do sorting
         int activities[][] = new int[start.length][3];
