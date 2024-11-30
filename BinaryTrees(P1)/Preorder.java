@@ -34,3 +34,5 @@ public class Preorder {
         System.out.println(root.data);
     }
 }
+
+//TC : 0(n)
