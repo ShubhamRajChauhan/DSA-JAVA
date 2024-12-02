@@ -12,7 +12,7 @@ public class BinaryTree {
         }
     }
 
-    //IMPROVEMENT ON TREE INPUT
+    //IMPROVEMENT ON TREE INPUT 
     public static BinaryTreeNode<Integer> takeTreeInputBetter(boolean isRoot, int parentData, boolean isLeft) {
         if(isRoot) {
             System.out.println("Enter root data");
@@ -121,3 +121,5 @@ public class BinaryTree {
         // System.out.println("    " + twoRight.data + " " + threeLeft.data);
     }
 }
+
+
