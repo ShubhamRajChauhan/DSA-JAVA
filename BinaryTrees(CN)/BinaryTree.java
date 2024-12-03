@@ -93,6 +93,16 @@ public class BinaryTree {
         printTreeDetailed(root.right);
     }
 
+
+    //COUNT NODES
+    public static int numNodes(BinaryTreeNode<Integer> root) {
+        if(root == null) {
+            return 0;
+        }
+        int leftNodeCount = numNodes(root.left);
+        int rightNodeCount = numNodes(root.right);
+        return 1 + leftNodeCount + rightNodeCount;
+    }
     public static void main(String[] args) {
         // BinaryTreeNode<Integer> root = new BinaryTreeNode<Integer>(1); //root.data = 1;
 
@@ -111,6 +121,7 @@ public class BinaryTree {
         //BinaryTreeNode<Integer> root = takeTreeInput();
         BinaryTreeNode<Integer> root = takeTreeInputBetter(true, 0, true);
         printTreeDetailed(root);
+        System.out.println("Num nodes " + numNodes(root));
 
 
         // System.out.println("Tree structure:");
