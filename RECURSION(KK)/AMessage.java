@@ -1,4 +1,4 @@
-public class Message {
+public class AMessage {
     public static void main(String[] args) {
         //write a function that prints hello world
         message();
