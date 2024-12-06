@@ -16,6 +16,9 @@ public class PFind {
         ArrayList<Integer> ans = findAllIndex2(arr, 4, 0, list);
         System.out.println(ans);
         System.out.println(list);
+
+
+        System.out.println(findAllIndex3(arr, 4, 0));
     }
     
     //true or false
@@ -72,5 +75,24 @@ public class PFind {
             list.add(index);
         }
         return findAllIndex2(arr, target, index+1, list);
+    }
+
+
+    //find all index another way--> VVI APPROACH
+    static ArrayList<Integer> findAllIndex3(int[] arr, int target, int index) {
+        
+        ArrayList<Integer> list = new ArrayList<>();
+        
+        if(index == arr.length){
+            return list;
+        }
+        //this will contain answer for that function call only
+        if(arr[index] == target) {
+            list.add(index);
+        }
+        ArrayList<Integer> ansFromBelowCalls = findAllIndex3(arr, target, index+1);
+        
+        list.addAll(ansFromBelowCalls);
+        return list;
     }
 }
