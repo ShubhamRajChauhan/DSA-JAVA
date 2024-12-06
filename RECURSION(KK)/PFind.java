@@ -9,6 +9,13 @@ public class PFind {
 
         findAllIndex(arr, 4, 0);
         System.out.println(list);
+
+        //System.out.println(findAllIndex2(arr, 4, 0, new ArrayList<>()));
+        //or
+        ArrayList<Integer> list = new ArrayList<>();
+        ArrayList<Integer> ans = findAllIndex2(arr, 4, 0, list);
+        System.out.println(ans);
+        System.out.println(list);
     }
     
     //true or false
@@ -54,5 +61,16 @@ public class PFind {
             list.add(index);
         }
         findAllIndex(arr, target, index+1);
+    }
+
+    //find all index another way
+    static ArrayList<Integer> findAllIndex2(int[] arr, int target, int index, ArrayList<Integer> list) {
+        if(index == arr.length){
+            return list;
+        }
+        if(arr[index] == target) {
+            list.add(index);
+        }
+        return findAllIndex2(arr, target, index+1, list);
     }
 }
