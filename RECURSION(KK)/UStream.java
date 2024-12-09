@@ -4,10 +4,12 @@ public class UStream {
         skip("", "baccad");
         //2.
         System.out.println(skip("baccad"));
+        //3.
+        System.out.println(skipApple("bdapplefg"));
     }
     
-    //pass the ans string in argument
-    static void skip(String p, String up) {
+    //1.pass the ans string in argument
+    static void skip(String p, String up) { 
         if(up.isEmpty()) {
             System.out.println(p);
             return;
@@ -23,7 +25,7 @@ public class UStream {
     }
 
     //(or)
-    //create ans variable in the function body
+    //2.create ans variable in the function body
     static String skip(String up) {
         if(up.isEmpty()) {
             return "";
@@ -34,7 +36,22 @@ public class UStream {
         if(ch == 'a') {
              return skip(up.substring(1));
         } else {
-            return ch +skip(up.substring(1));
+            return ch + skip(up.substring(1));
+        } 
+    }
+
+
+
+    //3.want to skip a entire string
+    static String skipApple(String up) {
+        if(up.isEmpty()) {
+            return "";
+        }
+        
+        if(up.startsWith("apple")) {
+             return skipApple(up.substring(5));
+        } else {
+            return up.charAt(0) + skipApple(up.substring(1));
         } 
     }
 }
