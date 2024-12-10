@@ -4,10 +4,15 @@ public class VSubSeq {
     public static void main(String[] args) {
         //1.
         subseq("", "abc");
-        //2.
+        //1.1
         System.out.println(subseqRet("", "abc"));
+        //2.
+        subseqAscii("", "abc");
+        //2.2
+        System.out.println(subseqAsciiRet("", "abc"));
     }
-
+     
+    //1.
     static void subseq(String p, String up) {
         if(up.isEmpty()) {
             System.out.println(p);
@@ -21,7 +26,7 @@ public class VSubSeq {
     }
 
     
-    //add the results in ArrayList
+    //1.1  add the results in ArrayList
     static ArrayList<String> subseqRet(String p, String up) {
         if(up.isEmpty()) {
             ArrayList<String> list = new ArrayList<>();
@@ -36,5 +41,38 @@ public class VSubSeq {
 
         left.addAll(right);
         return left;
+    }
+
+    //2.print subsets which also consists ascii
+    static void subseqAscii(String p, String up) {
+        if(up.isEmpty()) {
+            System.out.println(p);
+            return;
+        }
+
+        char ch = up.charAt(0);
+
+        subseqAscii(p + ch, up.substring(1));
+        subseqAscii(p, up.substring(1));
+        subseqAscii(p + (ch+0), up.substring(1));
+    }
+
+    //2.2  add the results in ArrayList
+    static ArrayList<String> subseqAsciiRet(String p, String up) {
+        if(up.isEmpty()) {
+            ArrayList<String> list = new ArrayList<>();
+            list.add(p); 
+            return list;
+        }
+
+        char ch = up.charAt(0);
+
+        ArrayList<String> first = subseqAsciiRet(p + ch, up.substring(1));
+        ArrayList<String> second = subseqAsciiRet(p, up.substring(1));
+        ArrayList<String> third = subseqAsciiRet(p + (ch+0), up.substring(1));
+
+        first.addAll(second);
+        first.addAll(third);
+        return first;
     }
 }
