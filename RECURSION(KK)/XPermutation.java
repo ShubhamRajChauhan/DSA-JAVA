@@ -15,5 +15,6 @@ public class XPermutation {
             String s = p.substring(i, p.length());
             permutations(f + ch + s, up.substring(1));
         }
+        hello
     }
 }
