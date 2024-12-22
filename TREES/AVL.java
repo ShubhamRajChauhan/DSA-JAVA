@@ -1,5 +1,6 @@
+import java.util.Scanner;
 
-public class BST {
+public class AVL {
     public class Node {
         private int value;
         private Node left;
@@ -114,7 +115,7 @@ public class BST {
     }
 
     public static void main(String[] args) {
-        BST tree = new BST();
+        AVL tree = new AVL();
         int[] nums = {5, 2, 7, 1, 4, 6, 9, 8, 3, 10};
         tree.populate(nums);
         tree.display();
