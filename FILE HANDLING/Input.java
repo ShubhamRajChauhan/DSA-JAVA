@@ -11,8 +11,7 @@ public class Input {
         // System.out.println((char) letters);
         // letters = isr.read();
         // }
-        // //isr.close(); //no need to write the try-catch automatically close the
-        // stream
+        // //isr.close(); //no need to write the try-catch automatically close the stream
         // System.out.println();
         // } catch (IOException e) {
         // System.out.println(e.getMessage());
