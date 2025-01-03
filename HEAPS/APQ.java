@@ -1,7 +1,7 @@
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-public class OnePQ {
+public class APQ {
     public static void main(String[] args) {
         PriorityQueue<Integer> pq = new PriorityQueue<>(); //it will give the values in ascending order , means it prioritize the smallest value        
         //PriorityQueue<Integer> pq = new PriorityQueue<>(Comparator.reverseOrder()); // now it will give the values in descending order , means now it prioritize the larger value        
