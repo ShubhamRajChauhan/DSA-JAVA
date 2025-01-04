@@ -1,4 +1,4 @@
-public class HeapSort {
+public class DHeapSort {
 
     //heapify
     public static void heapify(int arr[], int i, int size){
