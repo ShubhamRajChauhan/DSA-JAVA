@@ -35,7 +35,6 @@ public class GWeakestSoldier {
             }
             pq.add(new Row(count, i));
         }
-
         for(int i=0; i<k; i++){
             System.out.println("R"+pq.remove().idx);
         }
