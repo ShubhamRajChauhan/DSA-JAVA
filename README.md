@@ -30,6 +30,9 @@ Whether you're a beginner or an experienced programmer looking to sharpen your s
 20. **Queues**  
 21. **Greedy Algorithms**  
 22. **Trees**  
+23. **Heaps**
+24. **Hashing**
+25. **Tries**
 
 ## How to Use This Repository
 1. **Start from Basics:**  
