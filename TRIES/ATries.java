@@ -25,10 +25,29 @@ public class ATries {
         }
         curr.eow = true;
     }
+
+
+    //search 0(L)   (L = length of largest word)
+    public static boolean search(String key) {
+        Node curr = root;
+        for(int level=0; level<key.length(); level++) {
+            int idx = key.charAt(level) - 'a';
+            if(curr.children[idx] == null) {
+                return false;
+            }
+            curr = curr.children[idx];
+        }
+        return curr.eow == true;
+    }
     public static void main(String[] args) {
         String words[] = {"the", "a", "there", "their", "any", "thee"};
         for(int i=0; i<words.length; i++) {
             insert(words[i]);
         }
+
+        System.out.println(search("thee")); //true
+        System.out.println(search("thor")); //false
+        System.out.println(search("any")); //true
+        System.out.println(search("an")); //false
     }
 }
