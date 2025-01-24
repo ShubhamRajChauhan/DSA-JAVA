@@ -39,15 +39,37 @@ public class ATries {
         }
         return curr.eow == true;
     }
+
+    //startsWith 0(L)
+    public static boolean startsWith(String prefix) {
+        Node curr = root;
+        for(int i=0; i<prefix.length(); i++) {
+            int idx = prefix.charAt(i) - 'a';
+            if(curr.children[idx] == null) {
+                return false;
+            }
+            curr = curr.children[idx];
+        }
+        return true;
+    }
     public static void main(String[] args) {
-        String words[] = {"the", "a", "there", "their", "any", "thee"};
+        //String words[] = {"the", "a", "there", "their", "any", "thee"};
+        String words[] = {"apple", "app", "mango", "man", "woman"};
+        String prefix1 = "app";
+        String prefix2 = "moon";
+        String prefix3 = "ap";
         for(int i=0; i<words.length; i++) {
             insert(words[i]);
         }
 
-        System.out.println(search("thee")); //true
-        System.out.println(search("thor")); //false
-        System.out.println(search("any")); //true
-        System.out.println(search("an")); //false
+        // System.out.println(search("thee")); //true
+        // System.out.println(search("thor")); //false
+        // System.out.println(search("any")); //true
+        // System.out.println(search("an")); //false
+
+
+        System.out.println(startsWith(prefix1)); //true
+        System.out.println(startsWith(prefix2)); //false
+        System.out.println(startsWith(prefix3)); //true
     }
 }
