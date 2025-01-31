@@ -1,7 +1,9 @@
-public class MapUsingHash {
+// Implementation --> but not good
+
+public class BMapUsingHash {
     private Entity[] entities;
 
-    public MapUsingHash() {
+    public BMapUsingHash() {
         entities = new Entity[100];
     }
 
@@ -22,7 +24,7 @@ public class MapUsingHash {
 
     public String get(String key) {
         int hash = Math.abs(key.hashCode() % entities.length);
-        if(entities[hash] != null && entities[hash].key.equals(key)) {
+        if (entities[hash] != null && entities[hash].key.equals(key)) {
             return entities[hash].value;
         }
         return null;
@@ -30,12 +32,18 @@ public class MapUsingHash {
 
     public void remove(String key) {
         int hash = Math.abs(key.hashCode() % entities.length);
-        if(entities[hash] != null && entities[hash].key.equals(key)) {
+        if (entities[hash] != null && entities[hash].key.equals(key)) {
             entities[hash] = null;
         }
     }
 
     public static void main(String[] args) {
-        MapUsingHash map = new MapUsingHash();
+        BMapUsingHash map = new BMapUsingHash();
+
+        map.put("Mango", "King of fruits");
+        map.put("Apple", "A sweet red fruit");
+        map.put("Litchi", "Kunal's fav fruit");
+
+        System.out.println(map.get("Apple"));  //A sweet red fruit
     }
 }
