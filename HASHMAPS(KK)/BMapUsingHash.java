@@ -17,11 +17,13 @@ public class BMapUsingHash {
         }
     }
 
+    //add
     public void put(String key, String value) {
         int hash = Math.abs(key.hashCode() % entities.length);
         entities[hash] = new Entity(key, value); // overriding
     }
 
+    //get
     public String get(String key) {
         int hash = Math.abs(key.hashCode() % entities.length);
         if (entities[hash] != null && entities[hash].key.equals(key)) {
@@ -30,6 +32,7 @@ public class BMapUsingHash {
         return null;
     }
 
+    //remove
     public void remove(String key) {
         int hash = Math.abs(key.hashCode() % entities.length);
         if (entities[hash] != null && entities[hash].key.equals(key)) {
