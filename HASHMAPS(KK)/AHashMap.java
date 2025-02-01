@@ -24,7 +24,7 @@ public class AHashMap {
         set.add(56);
         set.add(2);
 
-        System.out.println(set); //[2, 56, 9, 43, 12]  --> no duplicates value
+        System.out.println(set); //[2, 56, 9, 43, 12]  --> no duplicate values
        
 
        
