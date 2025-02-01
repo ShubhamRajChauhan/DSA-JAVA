@@ -99,11 +99,12 @@ public class CHashMapFinal<K, V> {
       }
     
 
-    //contain
+    //contains
     public boolean containsKey(K key) {
         return get(key) != null;
     }
 
+    //beautify output
     @Override
     public String toString() {
       StringBuilder builder = new StringBuilder();
