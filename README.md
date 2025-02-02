@@ -1,5 +1,7 @@
 # Java Programming: A Comprehensive Learning Guide
 
+**Note**:  To access the source codes, please refer to the files with the (.java) extension.
+
 This repository is a **one-stop resource for Java enthusiasts and learners**, offering a complete guide to mastering Java programming. From basic to advanced levels, it includes:  
 - **Clear Explanations**  
 - **Coding Examples**  
@@ -35,7 +37,8 @@ Whether you're a beginner or an experienced programmer looking to sharpen your s
 25. **Karp-Rabin Algorithm**
 26. **Count Sort Algorithm**
 27. **Radix Sort Algorithm**
-28. **Tries**
+28. **Huffman Coding**
+29. **Tries**
 
 ## How to Use This Repository
 1. **Start from Basics:**  
