@@ -34,7 +34,8 @@ Whether you're a beginner or an experienced programmer looking to sharpen your s
 24. **Hashing**
 25. **Karp-Rabin Algorithm**
 26. **Count Sort Algorithm**
-27. **Tries**
+27. **Radix Sort Algorithm**
+28. **Tries**
 
 ## How to Use This Repository
 1. **Start from Basics:**  
