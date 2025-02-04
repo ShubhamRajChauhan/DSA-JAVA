@@ -38,7 +38,8 @@ Whether you're a beginner or an experienced programmer looking to sharpen your s
 26. **Count Sort Algorithm**
 27. **Radix Sort Algorithm**
 28. **Huffman Coding**
-29. **Tries**
+29. **Square Root Decomposition/ Mo's Algorithm**
+30. **Tries**
 
 ## How to Use This Repository
 1. **Start from Basics:**  
