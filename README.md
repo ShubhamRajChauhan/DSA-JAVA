@@ -40,6 +40,8 @@ Whether you're a beginner or an experienced programmer looking to sharpen your s
 28. **Huffman Coding**
 29. **Square Root Decomposition/ Mo's Algorithm**
 30. **Tries**
+31. **Graphs**
+32. **DP**
 
 ## How to Use This Repository
 1. **Start from Basics:**  
