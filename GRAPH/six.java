@@ -70,6 +70,3 @@ public class six {
         dfs(graph, 0, new boolean[V]);
     }
 }
-
-
-//0 1 3 4 2 5 6  
