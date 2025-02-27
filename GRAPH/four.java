@@ -1,4 +1,4 @@
-//DFS(Depth First Search) 
+//Has Path ?
 
 import java.util.*;
 
