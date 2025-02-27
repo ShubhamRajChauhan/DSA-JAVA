@@ -43,6 +43,13 @@ public class six {
         graph[5].add(new Edge(5, 6, 1));
     }
 
+    //Connected Components
+    public static void dfs(ArrayList<Edge>[] graph) {
+        boolean vis[] = new boolean[graph.length];
+        for(int i=0; i<graph.length; i++) {
+            dfsUtil(graph, i, vis);
+        }
+    }
 
     public static void dfsUtil(ArrayList<Edge>[] graph, int curr, boolean vis[]) { //TC: 0(V+E)
         //visit
