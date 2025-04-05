@@ -36,6 +36,7 @@ public class two {
 
 
 //----------------  Using Recursive DP, TC:0(n) SC:0(n)----------------
+/*
 public class two {
 
     public static int minStepsTo1(int n, int[] dp) {
@@ -82,6 +83,46 @@ public class two {
             dp[i] = -1;
         }
         int ans = minStepsTo1(n, dp);
+        System.out.println(ans);
+    }
+}
+*/
+
+
+
+
+
+
+
+
+
+//----------------  Iterative DP ----------------
+public class two {
+
+    public static int minStepsTo1(int n) {
+        if(n==0 || n == 1) {
+            return 0;
+        }
+        int[] dp = new int[n+1];
+        dp[0] = 0;
+        dp[1] = 0;
+        for(int i=2; i<=n; i++) {
+            dp[i] = dp[i-1] + 1;
+            if((i%2) == 0) {
+                dp[i] = Math.min(dp[i], dp[i/2] + 1);
+            }
+            if((i%3) == 0) {
+                dp[i] = Math.min(dp[i], dp[i/3] + 1);
+            }
+        }
+        return dp[n];
+
+        
+    }
+
+    public static void main(String[] args) {
+        int n = 5;
+        int ans = minStepsTo1(n);
         System.out.println(ans);
     }
 }
