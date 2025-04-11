@@ -1,5 +1,6 @@
 //Min Cost Path
 
+//---------------BOTTOM UP APPROACH-------------------------
 
 //------------Recursion---------------------
 /* 
@@ -96,6 +97,7 @@ public class four {
 
 
 //----------------------USING ITERATIVE DP---------------------------------
+/* 
 public class four {
 
     public static int minCost(int[][] cost) {
@@ -130,6 +132,43 @@ public class four {
         System.out.println(ans);
     }
 }
+*/
 
 
-//Output : 30
+
+//---------------TOP DOWN APPROACH-------------------------
+
+public class four {
+
+    public static int minCost(int[][] cost) {
+        int m = cost.length;
+        int n = cost[0].length;
+
+        int[][] dp = new int[m+1][n+1];
+        for(int i=0; i<dp.length; i++) {
+            for(int j=0; j<dp[i].length; j++) {
+                dp[i][j] = Integer.MAX_VALUE;
+            }
+        }
+
+        for(int i=1; i<=m; i++) {
+            for(int j=1; j<=n; j++) {
+                if(i==1 && j==1) {
+                    dp[i][j] = cost[0][0];
+                    continue;
+                }
+                int ans1 = dp[i-1][j];
+                int ans2 = dp[i][j-1];
+                int ans3 = dp[i-1][j-1];
+                dp[i][j] = cost[i-1][j-1] + Math.min(ans1, Math.min(ans2, ans3));
+            }
+        }
+        return dp[m][n];
+    }
+
+    public static void main(String[] args) {
+        int[][] cost = {{1,5,11}, {8,13,12}, {2,3,7}, {15,16,18}};
+        int ans = minCost(cost);
+        System.out.println(ans);
+    }
+}
