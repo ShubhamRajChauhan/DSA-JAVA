@@ -22,7 +22,7 @@ class TWOFrogJump {
 
 
 //--------------------------------MEMOIZATION-----------------------------------
-class TWOFrogJump {
+class TWOFrogJump1 {
     public int f(int idx, int[] heights, int[] dp) {
         if(idx == 0) {
             return 0;
@@ -53,7 +53,7 @@ class TWOFrogJump {
 
 
 //------------------------TABULATION--------------------------
-class TWOFrogJump {
+class TWOFrogJump2 {
     public int frogJump(int n, int[] heights) {
         int[] dp = new int[n];
         dp[0] = 0;
@@ -75,7 +75,7 @@ class TWOFrogJump {
 
 
 //------------------------SPACE OPTIMIZATION--------------------------
-class TWOFrogJump {
+class TWOFrogJump3 {
     public int frogJump(int[] heights) {
         int n = heights.length;
         int prev = 0;
