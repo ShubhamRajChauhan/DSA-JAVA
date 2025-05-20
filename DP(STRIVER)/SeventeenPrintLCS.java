@@ -25,7 +25,7 @@ public class SeventeenPrintLCS {
         char[] ans = new char[len];
         int index = len - 1;
 
-        int i = n, j = m;
+        int i = m, j = n;
         while (i > 0 && j > 0) {
             if (text1.charAt(i - 1) == text2.charAt(j - 1)) {
                 ans[index--] = text1.charAt(i - 1);
