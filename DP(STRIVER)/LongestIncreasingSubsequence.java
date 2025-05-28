@@ -131,7 +131,7 @@ class Solution {
 
 
 //----------------------------Tabulation(another way)---------------------------
-
+/* 
 class Solution {
     public int lengthOfLIS(int[] nums) {
         int n = nums.length;
@@ -149,6 +149,41 @@ class Solution {
             maxi = Math.max(maxi, dp[i]);
         }
         return maxi;   
+    }
+}
+*/
+
+
+
+
+//----------------------------Using Binary Search---------------------------
+
+class Solution {
+    public int lengthOfLIS(int[] nums) {
+        int n = nums.length;
+
+        List<Integer> temp = new ArrayList<>();
+        temp.add(nums[0]);
+
+        for (int i = 1; i < n; i++) {
+            if (nums[i] > temp.get(temp.size() - 1)) {
+                temp.add(nums[i]);
+            } else {
+                
+                int low = 0, high = temp.size() - 1;
+                while (low <= high) {
+                    int mid = (low + high) / 2;
+                    if (temp.get(mid) < nums[i]) {
+                        low = mid + 1;
+                    } else {
+                        high = mid - 1;
+                    }
+                }
+                temp.set(low, nums[i]); // Replace the element at the correct position
+            }
+        }
+
+        return temp.size();
     }
 }
 
