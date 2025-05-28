@@ -12,7 +12,6 @@ class Solution {
         Arrays.sort(nums);
 
         for (int i = 0; i < n; i++) {
-            dp[i] = 1;
             hash[i] = i;
 
             for (int prev = 0; prev < i; prev++) {
