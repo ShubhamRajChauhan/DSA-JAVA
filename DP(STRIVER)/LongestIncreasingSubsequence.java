@@ -29,6 +29,7 @@ class Solution {
 
 
 //-----------------------------Memoization----------------------------
+/*
 class Solution {
     public int lengthOfLIS(int[] nums) {
         int n = nums.length;
@@ -57,3 +58,97 @@ class Solution {
         return dp[idx][prev_idx+1] = len;
     }
 }
+*/
+
+
+
+
+//----------------------------Tabulation---------------------------
+/*
+class Solution {
+    public int lengthOfLIS(int[] nums) {
+        int n = nums.length;
+
+        int[][] dp = new int[n+1][n+1];
+        
+        for(int idx = n-1; idx>=0; idx--) {
+            for(int prev_idx = idx-1; prev_idx>=-1; prev_idx--) {
+                //notTake
+                int len = 0 + dp[idx+1][prev_idx + 1];
+                //Take
+                if(prev_idx == -1 || nums[idx] > nums[prev_idx]) {
+                    len = Math.max(len, 1 + dp[idx+1][idx+1]);
+                }
+                dp[idx][prev_idx+1] = len;
+            }
+        }
+
+        return dp[0][-1+1];
+    }
+}
+*/
+
+
+
+
+
+
+
+//----------------------------Space Optimization---------------------------
+/*
+class Solution {
+    public int lengthOfLIS(int[] nums) {
+        int n = nums.length;
+
+        int[] next = new int[n+1];
+        int[] cur = new int[n+1];
+        
+        for(int idx = n-1; idx>=0; idx--) {
+            for(int prev_idx = idx-1; prev_idx>=-1; prev_idx--) {
+                //notTake
+                int len = 0 + next[prev_idx + 1];
+                //Take
+                if(prev_idx == -1 || nums[idx] > nums[prev_idx]) {
+                    len = Math.max(len, 1 + next[idx+1]);
+                }
+                cur[prev_idx+1] = len;
+            }
+            next = cur;
+        }
+
+        return next[-1+1];
+    }
+}
+*/
+
+
+
+
+
+
+
+
+
+
+//----------------------------Tabulation(another way)---------------------------
+
+class Solution {
+    public int lengthOfLIS(int[] nums) {
+        int n = nums.length;
+
+        int[] dp = new int[n];
+        for(int i=0; i<n; i++) dp[i] = 1;
+
+        int maxi =1;
+        for(int i=0; i<n; i++) {
+            for(int prev = 0; prev < i; prev++) {
+                if(nums[i] > nums[prev]) {
+                    dp[i] = Math.max(dp[i], 1 + dp[prev]);
+                }
+            }
+            maxi = Math.max(maxi, dp[i]);
+        }
+        return maxi;   
+    }
+}
+
